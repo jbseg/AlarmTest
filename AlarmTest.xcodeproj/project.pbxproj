@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428A12AF2482BED50037E349 /* joinMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12AE2482BED50037E349 /* joinMenu.swift */; };
+		428A12B12482F4660037E349 /* alarmSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B02482F4660037E349 /* alarmSet.swift */; };
+		428A12B3248307420037E349 /* charitySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B2248307420037E349 /* charitySelection.swift */; };
 		42C4BD06248159B100148A81 /* BtnStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD05248159B100148A81 /* BtnStyles.swift */; };
 		42C4BD0A2481625100148A81 /* alarm_sound_lady_gaga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */; };
 		42C4BD0C2481642C00148A81 /* alarm_sound_long.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		428A12AE2482BED50037E349 /* joinMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinMenu.swift; sourceTree = "<group>"; };
+		428A12B02482F4660037E349 /* alarmSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmSet.swift; sourceTree = "<group>"; };
+		428A12B2248307420037E349 /* charitySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = charitySelection.swift; sourceTree = "<group>"; };
 		42C4BD05248159B100148A81 /* BtnStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnStyles.swift; sourceTree = "<group>"; };
 		42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound_lady_gaga.mp3; sourceTree = "<group>"; };
 		42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound_long.mp3; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 				42C4BD0F24818F4600148A81 /* AlarmSounds */,
 				42F4A4AE248066FA0099F574 /* Preview Content */,
 				42C4BD05248159B100148A81 /* BtnStyles.swift */,
+				428A12AE2482BED50037E349 /* joinMenu.swift */,
+				428A12B02482F4660037E349 /* alarmSet.swift */,
+				428A12B2248307420037E349 /* charitySelection.swift */,
 			);
 			path = AlarmTest;
 			sourceTree = "<group>";
@@ -185,9 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428A12B3248307420037E349 /* charitySelection.swift in Sources */,
+				428A12AF2482BED50037E349 /* joinMenu.swift in Sources */,
 				42F4A4A7248066F80099F574 /* AppDelegate.swift in Sources */,
 				42C4BD192481919900148A81 /* DigitalClock.swift in Sources */,
 				42F4A4A9248066F80099F574 /* SceneDelegate.swift in Sources */,
+				428A12B12482F4660037E349 /* alarmSet.swift in Sources */,
 				42C4BD1B24819E0400148A81 /* RingingAnim.swift in Sources */,
 				42C4BD1D2481B20700148A81 /* RealTime.swift in Sources */,
 				42C4BD182481919900148A81 /* WakeUpClock.swift in Sources */,

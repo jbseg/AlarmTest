@@ -14,25 +14,19 @@ struct RingingAnim: View {
     var body: some View {
         VStack{
             if wakeUp <= RT.date {
-                Image(systemName: "alarm.fill").foregroundColor(.white)
+                Image(systemName: "alarm.fill")
             }
             else {
-                Image(systemName: "alarm").foregroundColor(.white)
+                Image(systemName: "alarm")
             }
-//        }.onAppear(perform: startClock)
-    }
-//    func startClock() {
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in
-//             self.currTime = Date()
-//            print(self.currTime)
-//           })
+        }
     }
 }
 
 struct RingingAnim_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+//            Color.black.edgesIgnoringSafeArea(.all)
             RingingAnim(wakeUp: Date()).environmentObject(RealTime())
         }
     }

@@ -15,7 +15,7 @@ struct DigitalClock: View {
         Text("\(timeString(date: RT.date))")
             .font(.system(size: 60))
             .fontWeight(.ultraLight)
-            .foregroundColor(Color.white)
+//            .foregroundColor(Color.white)
 //            .onAppear(perform: startClock)
     }
 //    func startClock() {
@@ -35,7 +35,7 @@ struct DigitalClock: View {
 struct DigitalClock_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+//            Color.black.edgesIgnoringSafeArea(.all)
             DigitalClock().environmentObject(RealTime())
         }
     }

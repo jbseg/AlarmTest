@@ -14,7 +14,7 @@ struct WakeUpClock: View {
         Text("Wake up \(timeString(date: date))")
             .font(.system(size: 20))
             .fontWeight(.regular)
-            .foregroundColor(Color.white)
+//            .foregroundColor(Color.white)
     }
     func timeString(date: Date) -> String {
          let formatter = DateFormatter()
@@ -27,8 +27,8 @@ struct WakeUpClock: View {
 struct WakeUpClock_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            Color.black
-                .edgesIgnoringSafeArea(.all)
+//            Color.black
+//                .edgesIgnoringSafeArea(.all)
             WakeUpClock(date: Date())
         }
     }
