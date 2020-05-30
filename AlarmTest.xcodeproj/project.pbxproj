@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C4BD06248159B100148A81 /* BtnStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD05248159B100148A81 /* BtnStyles.swift */; };
+		42C4BD0A2481625100148A81 /* alarm_sound_lady_gaga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */; };
+		42C4BD0C2481642C00148A81 /* alarm_sound_long.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */; };
+		42C4BD182481919900148A81 /* WakeUpClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD162481919900148A81 /* WakeUpClock.swift */; };
+		42C4BD192481919900148A81 /* DigitalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD172481919900148A81 /* DigitalClock.swift */; };
+		42C4BD1B24819E0400148A81 /* RingingAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD1A24819E0400148A81 /* RingingAnim.swift */; };
+		42C4BD1D2481B20700148A81 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4BD1C2481B20700148A81 /* RealTime.swift */; };
 		42F4A4A7248066F80099F574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4A4A6248066F80099F574 /* AppDelegate.swift */; };
 		42F4A4A9248066F80099F574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4A4A8248066F80099F574 /* SceneDelegate.swift */; };
 		42F4A4AB248066F80099F574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4A4AA248066F80099F574 /* ContentView.swift */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42C4BD05248159B100148A81 /* BtnStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnStyles.swift; sourceTree = "<group>"; };
+		42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound_lady_gaga.mp3; sourceTree = "<group>"; };
+		42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound_long.mp3; sourceTree = "<group>"; };
+		42C4BD162481919900148A81 /* WakeUpClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WakeUpClock.swift; sourceTree = "<group>"; };
+		42C4BD172481919900148A81 /* DigitalClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalClock.swift; sourceTree = "<group>"; };
+		42C4BD1A24819E0400148A81 /* RingingAnim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingAnim.swift; sourceTree = "<group>"; };
+		42C4BD1C2481B20700148A81 /* RealTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
 		42F4A4A3248066F80099F574 /* AlarmTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F4A4A6248066F80099F574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F4A4A8248066F80099F574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42C4BD0F24818F4600148A81 /* AlarmSounds */ = {
+			isa = PBXGroup;
+			children = (
+				42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */,
+				42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */,
+			);
+			path = AlarmSounds;
+			sourceTree = "<group>";
+		};
+		42C4BD1024818F6400148A81 /* ClockViews */ = {
+			isa = PBXGroup;
+			children = (
+				42C4BD172481919900148A81 /* DigitalClock.swift */,
+				42C4BD162481919900148A81 /* WakeUpClock.swift */,
+			);
+			path = ClockViews;
+			sourceTree = "<group>";
+		};
 		42F4A49A248066F80099F574 = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +91,15 @@
 				42F4A4A6248066F80099F574 /* AppDelegate.swift */,
 				42F4A4A8248066F80099F574 /* SceneDelegate.swift */,
 				42F4A4AA248066F80099F574 /* ContentView.swift */,
+				42C4BD1C2481B20700148A81 /* RealTime.swift */,
+				42C4BD1A24819E0400148A81 /* RingingAnim.swift */,
+				42C4BD1024818F6400148A81 /* ClockViews */,
 				42F4A4AC248066FA0099F574 /* Assets.xcassets */,
 				42F4A4B1248066FA0099F574 /* LaunchScreen.storyboard */,
 				42F4A4B4248066FA0099F574 /* Info.plist */,
+				42C4BD0F24818F4600148A81 /* AlarmSounds */,
 				42F4A4AE248066FA0099F574 /* Preview Content */,
+				42C4BD05248159B100148A81 /* BtnStyles.swift */,
 			);
 			path = AlarmTest;
 			sourceTree = "<group>";
@@ -133,8 +170,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C4BD0A2481625100148A81 /* alarm_sound_lady_gaga.mp3 in Resources */,
 				42F4A4B3248066FA0099F574 /* LaunchScreen.storyboard in Resources */,
 				42F4A4B0248066FA0099F574 /* Preview Assets.xcassets in Resources */,
+				42C4BD0C2481642C00148A81 /* alarm_sound_long.mp3 in Resources */,
 				42F4A4AD248066FA0099F574 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,8 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F4A4A7248066F80099F574 /* AppDelegate.swift in Sources */,
+				42C4BD192481919900148A81 /* DigitalClock.swift in Sources */,
 				42F4A4A9248066F80099F574 /* SceneDelegate.swift in Sources */,
+				42C4BD1B24819E0400148A81 /* RingingAnim.swift in Sources */,
+				42C4BD1D2481B20700148A81 /* RealTime.swift in Sources */,
+				42C4BD182481919900148A81 /* WakeUpClock.swift in Sources */,
 				42F4A4AB248066F80099F574 /* ContentView.swift in Sources */,
+				42C4BD06248159B100148A81 /* BtnStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +333,7 @@
 				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +354,7 @@
 				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
