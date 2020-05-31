@@ -31,6 +31,9 @@ struct alarmSet: View {
         }
     }
     func setAlarm(){
+        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: wakeUp)
+        self.wakeUp = Calendar.current.date(from: components)!
+        
         if wakeUp < RT.date {
             print("wakeUp \(wakeUp) RT \(RT.date)")
             self.wakeUp = wakeUp.addingTimeInterval(86400)
@@ -43,6 +46,7 @@ struct alarmSet: View {
         content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarm_sound_lady_gaga.mp3"))
 
         // show this notification five seconds from now
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         for i in 0...2 {
             var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
             dateComponents.second = i * 30
@@ -56,9 +60,8 @@ struct alarmSet: View {
         }
         
 
-        self.alarmIsSet.toggle()
-        print(self.alarmIsSet)
-        self.pageOpen.toggle()
+        self.alarmIsSet = true
+        self.pageOpen = false
     }
 }
 
