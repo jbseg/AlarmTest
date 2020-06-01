@@ -11,9 +11,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var alarmIsSet = false
+    @State var showJoin = false
+    @State var showResults = false
     @State private var wakeUp = Date()
+    @State var showAlarmSheet = false
     @EnvironmentObject var RT: RealTime
-    @State var showingDetail = false
     
     var body: some View {
         ZStack{
@@ -22,40 +24,55 @@ struct ContentView: View {
                     VStack(alignment: .leading){
                         DigitalClock()
                         if alarmIsSet{
-                            HStack{
-                                WakeUpClock(date: wakeUp)
-                                RingingAnim(wakeUp: wakeUp)
-                            }
-                            if wakeUp <= RT.date  {
+                            WakeUpClock(date: wakeUp)
+                            if wakeUp <= RT.date && !showResults{
                                 Button(action: stopFunc) {
                                     Text("Stop")
                                 }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 156/255, green: 157/255, blue: 161/255)))
                             }
+                        }
+                        if showResults {
+                            resultsPreview()
                         }
                     }
                 }
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
                 .navigationBarItems(
                     trailing:
+                    HStack{
                         Button(action: {
                             withAnimation{
-                                self.showingDetail.toggle()
+                                self.showJoin.toggle()
+                            }
+                        }, label: {
+                            Image(systemName: "person.2").resizable().aspectRatio(contentMode: .fit)
+                                .frame(width: 30.0, height: 30.0)
+                        })
+                        Button(action: {
+                            withAnimation{
+                                self.showAlarmSheet.toggle()
                             }
                         }, label: {
                             Image(systemName: "plus").resizable()
                                 .frame(width: 20.0, height: 20.0)
                         })
+                    }
                 )
             }
-        }.onAppear(perform: requestNotificationPermission)
-        .sheet(isPresented: $showingDetail) {
-            alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showingDetail).environmentObject(self.RT)
+            if self.showJoin {
+                joinMenu(showJoin: self.$showJoin)
+            }
+        }
+        .onAppear(perform: requestNotificationPermission)
+        .sheet(isPresented: $showAlarmSheet) {
+            alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showAlarmSheet).environmentObject(self.RT)
         }
     }
     
     func stopFunc(){
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         self.alarmIsSet = false
+        self.showResults = true
     }
     
     
@@ -68,8 +85,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    
 }
 
 

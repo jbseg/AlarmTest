@@ -14,11 +14,6 @@ class RealTime: ObservableObject {
     init() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in
           self.date = Date()
-//         print(self.date)
         })
     }
 }
-
-//class realttimeasd: ObservedObject {
-//    @Published var i = 0
-//}
