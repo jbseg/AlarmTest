@@ -23,6 +23,7 @@
 		42F4A4AD248066FA0099F574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F4A4AC248066FA0099F574 /* Assets.xcassets */; };
 		42F4A4B0248066FA0099F574 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F4A4AF248066FA0099F574 /* Preview Assets.xcassets */; };
 		42F4A4B3248066FA0099F574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F4A4B1248066FA0099F574 /* LaunchScreen.storyboard */; };
+		5D80AA2024860A4500B3769B /* alarmMain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5D80AA1F24860A4500B3769B /* alarmMain.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		42F4A4AF248066FA0099F574 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42F4A4B2248066FA0099F574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42F4A4B4248066FA0099F574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D80AA1F24860A4500B3769B /* alarmMain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmMain.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				42C4BD0B2481642C00148A81 /* alarm_sound_long.mp3 */,
 				42C4BD092481625100148A81 /* alarm_sound_lady_gaga.mp3 */,
+				5D80AA1F24860A4500B3769B /* alarmMain.wav */,
 			);
 			path = AlarmSounds;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C4BD0A2481625100148A81 /* alarm_sound_lady_gaga.mp3 in Resources */,
+				5D80AA2024860A4500B3769B /* alarmMain.wav in Resources */,
 				42F4A4B3248066FA0099F574 /* LaunchScreen.storyboard in Resources */,
 				42F4A4B0248066FA0099F574 /* Preview Assets.xcassets in Resources */,
 				42C4BD0C2481642C00148A81 /* alarm_sound_long.mp3 in Resources */,
@@ -342,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlarmTest/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
+				DEVELOPMENT_TEAM = 6CU6TQT39Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -350,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuasegal.AlarmTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneajg.AlarmTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlarmTest/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
+				DEVELOPMENT_TEAM = 6CU6TQT39Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -371,7 +375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuasegal.AlarmTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneajg.AlarmTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

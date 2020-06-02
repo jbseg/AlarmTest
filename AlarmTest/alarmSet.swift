@@ -43,7 +43,7 @@ struct alarmSet: View {
         let content = UNMutableNotificationContent()
         content.title = "Quick! Alarm Roulette time!"
         content.subtitle = "Be the first to wake up"
-        content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarm_sound_lady_gaga.mp3"))
+        content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
 
         // clear all previous notifications
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
