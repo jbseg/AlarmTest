@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             //Assigning the delegate here
             UNUserNotificationCenter.current().delegate = self
-            
+
+            //This is done to set up the notifications in the settings
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                  print ("granted: ", granted)
+            }
+
             return true
       }
 
@@ -36,9 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-//MARK: - Enabling alarm notfications when app in Foreground
+//MARK: - Enabling alarm notfications in Foreground + Action for Notification Response
 extension AppDelegate: UNUserNotificationCenterDelegate {
       func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
             completionHandler([.alert, .sound, .badge])
+      }
+
+      func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            print (response.actionIdentifier)
+            completionHandler()
       }
 }
