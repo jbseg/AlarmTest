@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38F69559F30551E7F1D016C4 /* Pods_AlarmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3194B7C338C1C60336023B /* Pods_AlarmTest.framework */; };
+		420146612487EAD30085235E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420146602487EAD30085235E /* GoogleService-Info.plist */; };
 		428A12AF2482BED50037E349 /* joinMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12AE2482BED50037E349 /* joinMenu.swift */; };
 		428A12B12482F4660037E349 /* alarmSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B02482F4660037E349 /* alarmSet.swift */; };
 		428A12B3248307420037E349 /* charitySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B2248307420037E349 /* charitySelection.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28AD37C26B9C49634DCA4A45 /* Pods-AlarmTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmTest.debug.xcconfig"; path = "Target Support Files/Pods-AlarmTest/Pods-AlarmTest.debug.xcconfig"; sourceTree = "<group>"; };
+		420146602487EAD30085235E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		428A12AE2482BED50037E349 /* joinMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinMenu.swift; sourceTree = "<group>"; };
 		428A12B02482F4660037E349 /* alarmSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmSet.swift; sourceTree = "<group>"; };
 		428A12B2248307420037E349 /* charitySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = charitySelection.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		42F4A4B2248066FA0099F574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42F4A4B4248066FA0099F574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D80AA1F24860A4500B3769B /* alarmMain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmMain.wav; sourceTree = "<group>"; };
+		5F55915293B01E98A7967BC4 /* Pods-AlarmTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmTest.release.xcconfig"; path = "Target Support Files/Pods-AlarmTest/Pods-AlarmTest.release.xcconfig"; sourceTree = "<group>"; };
+		AC3194B7C338C1C60336023B /* Pods_AlarmTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +59,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F69559F30551E7F1D016C4 /* Pods_AlarmTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33216734EACAEDC6F173E48C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28AD37C26B9C49634DCA4A45 /* Pods-AlarmTest.debug.xcconfig */,
+				5F55915293B01E98A7967BC4 /* Pods-AlarmTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		42C4BD0F24818F4600148A81 /* AlarmSounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +99,8 @@
 			children = (
 				42F4A4A5248066F80099F574 /* AlarmTest */,
 				42F4A4A4248066F80099F574 /* Products */,
+				33216734EACAEDC6F173E48C /* Pods */,
+				786F9B4F33FF0A8B95D56D78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +121,7 @@
 				42C4BD1C2481B20700148A81 /* RealTime.swift */,
 				42C4BD1024818F6400148A81 /* ClockViews */,
 				42F4A4AC248066FA0099F574 /* Assets.xcassets */,
+				420146602487EAD30085235E /* GoogleService-Info.plist */,
 				42F4A4B1248066FA0099F574 /* LaunchScreen.storyboard */,
 				42F4A4B4248066FA0099F574 /* Info.plist */,
 				42C4BD0F24818F4600148A81 /* AlarmSounds */,
@@ -124,6 +143,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		786F9B4F33FF0A8B95D56D78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC3194B7C338C1C60336023B /* Pods_AlarmTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F4A4B7248066FA0099F574 /* Build configuration list for PBXNativeTarget "AlarmTest" */;
 			buildPhases = (
+				40E997B438B01B660A377FE8 /* [CP] Check Pods Manifest.lock */,
 				42F4A49F248066F80099F574 /* Sources */,
 				42F4A4A0248066F80099F574 /* Frameworks */,
 				42F4A4A1248066F80099F574 /* Resources */,
+				99B817C76015BA6A821F06BF /* [CP] Embed Pods Frameworks */,
+				ED7AA6232BA0EBE041952101 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +216,72 @@
 				5D80AA2024860A4500B3769B /* alarmMain.wav in Resources */,
 				42F4A4B3248066FA0099F574 /* LaunchScreen.storyboard in Resources */,
 				42F4A4B0248066FA0099F574 /* Preview Assets.xcassets in Resources */,
+				420146612487EAD30085235E /* GoogleService-Info.plist in Resources */,
 				42C4BD0C2481642C00148A81 /* alarm_sound_long.mp3 in Resources */,
 				42F4A4AD248066FA0099F574 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40E997B438B01B660A377FE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlarmTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99B817C76015BA6A821F06BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED7AA6232BA0EBE041952101 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlarmTest/Pods-AlarmTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42F4A49F248066F80099F574 /* Sources */ = {
@@ -342,11 +432,12 @@
 		};
 		42F4A4B8248066FA0099F574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28AD37C26B9C49634DCA4A45 /* Pods-AlarmTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlarmTest/Preview Content\"";
-				DEVELOPMENT_TEAM = 6CU6TQT39Q;
+				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -354,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shaneajg.AlarmTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanejg.AlarmTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,11 +454,12 @@
 		};
 		42F4A4B9248066FA0099F574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F55915293B01E98A7967BC4 /* Pods-AlarmTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlarmTest/Preview Content\"";
-				DEVELOPMENT_TEAM = 6CU6TQT39Q;
+				DEVELOPMENT_TEAM = ZQQ33DR3YJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlarmTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -375,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shaneajg.AlarmTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shanejg.AlarmTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
