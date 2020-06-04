@@ -26,6 +26,7 @@ class SessionStore : ObservableObject {
     @Published var session: User?
     var handle: AuthStateDidChangeListenerHandle?
 
+    
     func listen () {
         // monitor authentication changes using firebase
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in

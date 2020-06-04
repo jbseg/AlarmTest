@@ -27,10 +27,6 @@ struct SignInView : View {
                 self.error = true
             } else {
                 print("logged in!")
-//                print(result)
-                self.email = "SUCCESS"
-                self.password = ""
-//                session.session = User
             }
         }
     }

@@ -34,10 +34,10 @@ struct SignUpView : View {
         }
     }
 
-    func getUser () {
-        print("hi")
-        session.listen()
-    }
+//    func getUser () {
+//        print("hi")
+//        session.listen()
+//    }
     
     var body: some View {
         VStack {
@@ -53,7 +53,7 @@ struct SignUpView : View {
             Button(action: signUp) {
                 Text("Sign up")
             }
-        }.onAppear(perform: getUser)
+        }
     }
 }
 

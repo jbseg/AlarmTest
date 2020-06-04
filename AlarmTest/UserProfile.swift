@@ -13,7 +13,7 @@ struct UserProfile: View {
     
     func signOut () {
          print("hi")
-         session.signOut()
+         print(session.signOut())
      }
     var body: some View {
         VStack {

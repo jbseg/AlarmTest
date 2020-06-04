@@ -8,15 +8,20 @@
 
 import SwiftUI
 import Firebase
-import GoogleSignIn
+
 struct ContentView : View {
     
     @EnvironmentObject var session: SessionStore
+    let firstLaunch = FirstLaunch()
     
     var body: some View {
         VStack {
-            if (session.session != nil) {
-                Home().transition(.slide)
+            if Auth.auth().currentUser != nil {
+                if firstLaunch.isFirstLaunch {
+                    Tutorial()
+                } else{
+                    Home().transition(.slide)
+                }
             } else {
                 Login().transition(.slide)
             }
