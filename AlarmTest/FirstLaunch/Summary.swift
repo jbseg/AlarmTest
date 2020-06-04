@@ -21,7 +21,11 @@ struct Summary: View {
             Text("If you'd like to see it again\n delete and reinstall the app")
             Text("This is alarm roulette")
             Button(action: {self.firstLaunch.firstLaunchComplete()}) {
-                Text("Let's Start!")
+                Text("Tap here to Start!")
+                     .padding()
+                    .background(Color.blue)
+               
+                .cornerRadius(25)
             }
         }
             .multilineTextAlignment(.center)

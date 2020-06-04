@@ -16,12 +16,12 @@ struct ContentView : View {
     
     var body: some View {
         VStack {
-            if Auth.auth().currentUser != nil {
-                if !firstLaunch.wasLaunchedBefore {
-                    Summary()
-                } else{
-                    Home().transition(.slide)
-                }
+            if !firstLaunch.wasLaunchedBefore {
+                Summary()
+            }
+            else if Auth.auth().currentUser != nil {
+                Home().transition(.slide)
+                
             } else {
                 Login().transition(.slide)
             }
