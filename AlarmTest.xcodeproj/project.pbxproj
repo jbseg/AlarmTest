@@ -89,6 +89,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		420146732489407E0085235E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4201466A24882AFF0085235E /* Login.swift */,
+				420146642487F0460085235E /* SignUpView.swift */,
+				4201466C24882BE60085235E /* SignInView.swift */,
+				420146622487EE800085235E /* SessionStore.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		42014674248941590085235E /* FirstLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				4201466E2488916B0085235E /* FirstLaunch.swift */,
+			);
+			path = FirstLaunch;
+			sourceTree = "<group>";
+		};
+		420146752489419E0085235E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				42C4BD05248159B100148A81 /* BtnStyles.swift */,
+				428A12AE2482BED50037E349 /* joinMenu.swift */,
+				428A12B02482F4660037E349 /* alarmSet.swift */,
+				428A12B2248307420037E349 /* charitySelection.swift */,
+				428DF1E424857E6A0014D822 /* resultsPreview.swift */,
+				420146662487F2EA0085235E /* Home.swift */,
+				420146682487FAA40085235E /* UserProfile.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		42C4BD0F24818F4600148A81 /* AlarmSounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +162,9 @@
 		42F4A4A5248066F80099F574 /* AlarmTest */ = {
 			isa = PBXGroup;
 			children = (
+				420146752489419E0085235E /* Home */,
+				42014674248941590085235E /* FirstLaunch */,
+				420146732489407E0085235E /* Login */,
 				42F4A4A6248066F80099F574 /* AppDelegate.swift */,
 				42F4A4A8248066F80099F574 /* SceneDelegate.swift */,
 				42F4A4AA248066F80099F574 /* ContentView.swift */,
@@ -140,18 +176,6 @@
 				42F4A4B4248066FA0099F574 /* Info.plist */,
 				42C4BD0F24818F4600148A81 /* AlarmSounds */,
 				42F4A4AE248066FA0099F574 /* Preview Content */,
-				42C4BD05248159B100148A81 /* BtnStyles.swift */,
-				428A12AE2482BED50037E349 /* joinMenu.swift */,
-				428A12B02482F4660037E349 /* alarmSet.swift */,
-				428A12B2248307420037E349 /* charitySelection.swift */,
-				428DF1E424857E6A0014D822 /* resultsPreview.swift */,
-				420146622487EE800085235E /* SessionStore.swift */,
-				420146642487F0460085235E /* SignUpView.swift */,
-				420146662487F2EA0085235E /* Home.swift */,
-				420146682487FAA40085235E /* UserProfile.swift */,
-				4201466A24882AFF0085235E /* Login.swift */,
-				4201466C24882BE60085235E /* SignInView.swift */,
-				4201466E2488916B0085235E /* FirstLaunch.swift */,
 			);
 			path = AlarmTest;
 			sourceTree = "<group>";
