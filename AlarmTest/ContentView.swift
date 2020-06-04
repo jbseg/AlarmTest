@@ -12,13 +12,13 @@ import Firebase
 struct ContentView : View {
     
     @EnvironmentObject var session: SessionStore
-    let firstLaunch = FirstLaunch()
+    @EnvironmentObject var firstLaunch: FirstLaunch
     
     var body: some View {
         VStack {
             if Auth.auth().currentUser != nil {
-                if firstLaunch.isFirstLaunch {
-                    Tutorial()
+                if !firstLaunch.wasLaunchedBefore {
+                    Summary()
                 } else{
                     Home().transition(.slide)
                 }
@@ -33,6 +33,6 @@ struct ContentView : View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(SessionStore())
+            .environmentObject(SessionStore()).environmentObject(FirstLaunch())
     }
 }

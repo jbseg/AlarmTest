@@ -8,38 +8,27 @@
 
 import Foundation
 import SwiftUI
-final class FirstLaunch {
+
+class FirstLaunch: ObservableObject {
+//    @Published var date = Date()
     
-    let userDefaults: UserDefaults = .standard
-    
-    let wasLaunchedBefore: Bool
+//    let userDefaults: UserDefaults = .standard
+    @Published var wasLaunchedBefore: Bool
     var isFirstLaunch: Bool {
         return !wasLaunchedBefore
     }
     
     init() {
-        let key = "launched"
-        let wasLaunchedBefore = userDefaults.bool(forKey: key)
+        let wasLaunchedBefore = UserDefaults.standard.bool(forKey: "launched")
         self.wasLaunchedBefore = wasLaunchedBefore
-        if !wasLaunchedBefore {
-            userDefaults.set(true, forKey: key)
-        }
+//        if !wasLaunchedBefore {
+//            userDefaults.set(true, forKey: key)
+//        }
     }
     
-}
-
-struct Tutorial: View {
-    var body: some View {
-        VStack{
-            Text("First Launch")
-            Home()
-        }
-        
+    func firstLaunchComplete(){
+        UserDefaults.standard.set(true, forKey: "launched")
+        self.wasLaunchedBefore = true
     }
-}
-
-struct Tutorial_Previews: PreviewProvider {
-    static var previews: some View {
-        Tutorial()
-    }
+    
 }

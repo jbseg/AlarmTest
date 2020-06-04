@@ -16,6 +16,7 @@
 		4201466B24882AFF0085235E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466A24882AFF0085235E /* Login.swift */; };
 		4201466D24882BE60085235E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466C24882BE60085235E /* SignInView.swift */; };
 		4201466F2488916B0085235E /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466E2488916B0085235E /* FirstLaunch.swift */; };
+		4286101C24896D830098A8A5 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286101B24896D830098A8A5 /* Summary.swift */; };
 		428A12AF2482BED50037E349 /* joinMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12AE2482BED50037E349 /* joinMenu.swift */; };
 		428A12B12482F4660037E349 /* alarmSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B02482F4660037E349 /* alarmSet.swift */; };
 		428A12B3248307420037E349 /* charitySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A12B2248307420037E349 /* charitySelection.swift */; };
@@ -45,6 +46,7 @@
 		4201466A24882AFF0085235E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4201466C24882BE60085235E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4201466E2488916B0085235E /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		4286101B24896D830098A8A5 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		428A12AE2482BED50037E349 /* joinMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinMenu.swift; sourceTree = "<group>"; };
 		428A12B02482F4660037E349 /* alarmSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmSet.swift; sourceTree = "<group>"; };
 		428A12B2248307420037E349 /* charitySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = charitySelection.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4201466E2488916B0085235E /* FirstLaunch.swift */,
+				4286101B24896D830098A8A5 /* Summary.swift */,
 			);
 			path = FirstLaunch;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				42F4A4AB248066F80099F574 /* ContentView.swift in Sources */,
 				428DF1E524857E6A0014D822 /* resultsPreview.swift in Sources */,
 				420146652487F0460085235E /* SignUpView.swift in Sources */,
+				4286101C24896D830098A8A5 /* Summary.swift in Sources */,
 				4201466F2488916B0085235E /* FirstLaunch.swift in Sources */,
 				42C4BD06248159B100148A81 /* BtnStyles.swift in Sources */,
 				4201466B24882AFF0085235E /* Login.swift in Sources */,
