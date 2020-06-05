@@ -28,7 +28,9 @@ class FirstLaunch: ObservableObject {
     
     func firstLaunchComplete(){
         UserDefaults.standard.set(true, forKey: "launched")
-        self.wasLaunchedBefore = true
+        withAnimation(.easeInOut(duration: 0.5)) {
+            self.wasLaunchedBefore = true
+        }
     }
     
 }

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UNUserNotificationCenter.current().delegate = self
 
             //This is done to set up the notifications in the settings
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-                  print ("granted: ", granted)
-            }
+//            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+//                  print ("granted: ", granted)
+//            }
             FirebaseApp.configure()
             return true
       }

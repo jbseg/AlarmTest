@@ -21,6 +21,7 @@ struct alarmSet: View {
                         Text("Set a time")
                               .font(.title)
                         DatePicker("", selection: $wakeUp,  displayedComponents: .hourAndMinute).labelsHidden()
+//                    DatePicker(
                         Button(action: setAlarm) {
                               Text("Set Charity Alarm")
                         }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 244/255, green: 126/255, blue: 9/255)))

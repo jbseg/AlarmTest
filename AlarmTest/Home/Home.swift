@@ -67,7 +67,7 @@ struct Home: View {
                 joinMenu(showJoin: self.$showJoin)
             }
         }
-        .onAppear(perform: requestNotificationPermission)
+//        .onAppear(perform: requestNotificationPermission)
         .sheet(isPresented: $showAlarmSheet) {
             alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showAlarmSheet).environmentObject(self.RT)
         }
@@ -80,15 +80,15 @@ struct Home: View {
     }
     
     
-    func requestNotificationPermission(){
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func requestNotificationPermission(){
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+//            if success {
+//                print("All set!")
+//            } else if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }
 
 

@@ -17,7 +17,7 @@ struct ContentView : View {
     var body: some View {
         VStack {
             if !firstLaunch.wasLaunchedBefore {
-                Summary()
+                Welcome()
             }
             else if Auth.auth().currentUser != nil {
                 Home().transition(.slide)
