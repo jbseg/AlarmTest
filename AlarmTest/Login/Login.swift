@@ -13,9 +13,6 @@ struct Login: View {
         NavigationView{
             VStack{
                 SignUpView()
-                NavigationLink(destination: SignInView()) {
-                    Text("sign in")
-                }
             }
         }
     }

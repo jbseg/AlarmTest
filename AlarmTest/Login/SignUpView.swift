@@ -34,27 +34,66 @@ struct SignUpView : View {
         }
     }
 
-//    func getUser () {
-//        print("hi")
-//        session.listen()
-//    }
-    
-    var body: some View {
-        VStack {
-            TextField("email address", text: $email)
-                .padding([.leading])
-            SecureField("Password", text: $password)
-                .padding([.leading])
-//            TextField($email, placeholder: "email address")
-//            SecureField($password, placeholder: Text("Password"))
-            if (error) {
-                Text("username or password is wrong").foregroundColor(.red)
-            }
-            Button(action: signUp) {
-                Text("Sign up")
-            }
+var body: some View {
+     VStack {
+         Spacer()
+         Spacer()
+         Image(systemName: "alarm")
+             .resizable()
+             .aspectRatio(contentMode: .fit)
+             .frame(width: 100, height: 100, alignment: .center)
+         
+         Spacer()
+             
+         VStack(alignment: .leading){
+             VStack(alignment: .leading){
+                 Text("Email")
+                     .font(.headline)
+                     .fontWeight(.light)
+                     .foregroundColor(Color.init(.label)
+                         .opacity(0.75))
+                 TextField("Enter Your Email", text: $email)
+                 Divider()
+             }.padding(.bottom, 15)
+             
+             VStack(alignment: .leading){
+                 Text("Password")
+                     .font(.headline)
+                     .fontWeight(.light)
+                     .foregroundColor(Color.init(.label)
+                         .opacity(0.75))
+                 SecureField("Enter Your Password", text: $password)
+                 Divider()
+             }
+             if (error) {
+                 Text("username or password is wrong").foregroundColor(.red)
+             }
+             
+             
+         }
+         .padding(.horizontal, 6)
+         
+         Button(action: signUp) {
+             Text("Sign Up")
+             .font(.system(size: 20))
+                 .foregroundColor(.white)
+             .padding(.horizontal, 60)
+             .padding(.vertical, 15)
+             .background(Color.blue)
+             .cornerRadius(25)
+             
+         }
+         .padding(.top, 20)
+         .padding(.bottom, 10)
+        NavigationLink(destination: SignInView()) {
+            Text("already have an account? Sign in")
         }
-    }
+        .foregroundColor(.blue)
+         Spacer()
+         Spacer()
+     }
+     .padding()
+ }
 }
 
 struct SignUpView_Previews: PreviewProvider {
