@@ -11,6 +11,8 @@ import Firebase
 struct SignUpView : View {
     
     @State var email: String = ""
+    @State var firstName: String = ""
+    @State var lastName: String = ""
     @State var password: String = ""
     @State var loading = false
     @State var error = false
@@ -29,16 +31,16 @@ struct SignUpView : View {
             self.error_msg = "image is too large"
             return
         }
-        session.signUp(email: email, password: password, image: image) { (result, error) in
+        session.signUp(email: email, password: password) { (result, error) in
             self.loading = false
             if error != nil {
-                print("failed login")
+                print("failed login \(error?.localizedDescription)")
                 self.error = true
-                self.error_msg = "username or password is wrong"
+                self.error_msg = "something went wrong"
             } else {
                 // create the user in the db
                 print("image bytes: \(self.image)")
-                Firestore.firestore().collection("users").document(result!.user.uid).setData(["image": self.image]) { (err) in
+                Firestore.firestore().collection("users").document(result!.user.uid).setData(["firstName": self.firstName, "lastName": self.lastName, "image": self.image]) { (err) in
                     if err != nil {
                         print("error uploading the image: \((err?.localizedDescription)!)")
                         return
@@ -51,37 +53,64 @@ struct SignUpView : View {
     
     var body: some View {
         VStack {
-            Spacer()
-            Spacer()
-            Image(systemName: "alarm")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100, alignment: .center)
-            
-            Spacer()
+//            Spacer()
+//            Spacer()
+//            Image(systemName: "alarm")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 100, height: 100, alignment: .center)
+//
+//            Spacer()
             
             VStack(alignment: .center){
-                if self.image.count != 0 {
-                    Button(action: {
-                        self.showImagePicker.toggle()
-                    }) {
-                        Image(uiImage: UIImage(data: self.image)!)
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 55, height: 55)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                HStack{
+                    if self.image.count != 0 {
+                        Button(action: {
+                            self.showImagePicker.toggle()
+                        }) {
+                            Image(uiImage: UIImage(data: self.image)!)
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 55, height: 55)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                        }
+                    } else {
+                        Button(action: {
+                            self.showImagePicker.toggle()
+                        }) {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 55, height: 55)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                        }
                     }
-                } else {
-                    Button(action: {
-                        self.showImagePicker.toggle()
-                    }) {
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .frame(width: 55, height: 55)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                    }
+                    Text("Profile Picture")
+                    .font(.headline)
+                    .fontWeight(.light)
+                    .foregroundColor(Color.init(.label)
+                        .opacity(0.75))
+                }.padding()
+                HStack(spacing: 40){
+                    VStack(alignment: .leading){
+                        Text("First Name")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label)
+                                .opacity(0.75))
+                        TextField("First Name", text: $firstName)
+                        Divider()
+                    }.padding(.bottom, 15)
+                    VStack(alignment: .leading){
+                        Text("Last Name")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.init(.label)
+                                .opacity(0.75))
+                        TextField("Last Name", text: $lastName)
+                        Divider()
+                    }.padding(.bottom, 15)
                 }
                 VStack(alignment: .leading){
                     Text("Email")
@@ -126,8 +155,8 @@ struct SignUpView : View {
                 Text("already have an account? Sign in")
             }
             .foregroundColor(.blue)
-            Spacer()
-            Spacer()
+//            Spacer()
+//            Spacer()
         }
         .sheet(isPresented: self.$showImagePicker, content: {
             ImagePicker(show: self.$showImagePicker, image: self.$image)

@@ -13,10 +13,14 @@ import Combine
 class User {
     var uid: String
     var email: String
+    var firstName: String
+    var lastName: String
     var image : Data
-    init(uid: String, email: String, image : Data) {
+    init(uid: String, email: String, firstName: String, lastName: String, image : Data) {
         self.uid = uid
         self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
         self.image = image
     }
 
@@ -36,13 +40,14 @@ class SessionStore : ObservableObject {
                 let docRef = Firestore.firestore().collection("users").document(user.uid)
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
-                        let image: Data = document.get("image") as! Data
                         withAnimation(.easeInOut(duration: 0.5)) {
                             // set the "user" environment variable
                             self.user = User(
                                 uid: user.uid,
                                 email: user.email!,
-                                image: image
+                                firstName: document.get("firstName") as! String,
+                                lastName: document.get("lastName") as! String,
+                                image: document.get("image") as! Data
                             )
                         }
                     } else {
@@ -57,7 +62,6 @@ class SessionStore : ObservableObject {
     func signUp(
         email: String,
         password: String,
-        image: Data,
         handler: @escaping AuthDataResultCallback
         ) {
         

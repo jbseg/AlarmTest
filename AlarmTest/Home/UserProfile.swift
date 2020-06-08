@@ -19,6 +19,8 @@ struct UserProfile: View {
                     .frame(width: 45, height: 45)
                     .clipShape(Circle())
                 Text("uid: \(session.user!.uid)")
+                Text("first name: \(session.user!.firstName)")
+                Text("last name: \(session.user!.lastName)")
                 Text("email: \(session.user!.email)")
             }
             Button(action: signOut, label: {
