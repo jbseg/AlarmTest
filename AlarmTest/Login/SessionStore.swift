@@ -12,18 +12,19 @@ import Combine
 
 class User {
     var uid: String
-    var email: String?
-
-    init(uid: String, email: String?) {
+    var email: String
+    var image : Data
+    init(uid: String, email: String, image : Data) {
         self.uid = uid
         self.email = email
+        self.image = image
     }
 
 }
 
 class SessionStore : ObservableObject {
 //    var didChange = PassthroughSubject<SessionStore, Never>()
-    @Published var session: User?
+    @Published var user: User?
     var handle: AuthStateDidChangeListenerHandle?
 
     
@@ -31,25 +32,35 @@ class SessionStore : ObservableObject {
         // monitor authentication changes using firebase
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
-                // if we have a user, create a new user model
-                print("Got user: \(user)")
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    self.session = User(
-                        uid: user.uid,
-                        email: user.email
-                    )
+                // find the user in the db and load the info
+                let docRef = Firestore.firestore().collection("users").document(user.uid)
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let image: Data = document.get("image") as! Data
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            // set the "user" environment variable
+                            self.user = User(
+                                uid: user.uid,
+                                email: user.email!,
+                                image: image
+                            )
+                        }
+                    } else {
+                        print("Can't find user in db")
+                    }
                 }
             } else {
-                // if we don't have a user, set our session to nil
-                self.session = nil
+                self.user = nil
             }
         }
     }
     func signUp(
         email: String,
         password: String,
+        image: Data,
         handler: @escaping AuthDataResultCallback
         ) {
+        
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
 
@@ -64,8 +75,9 @@ class SessionStore : ObservableObject {
     func signOut () -> Bool {
         do {
             try Auth.auth().signOut()
+            print("signing out")
             withAnimation(.easeInOut(duration: 0.5)) {
-                self.session = nil
+                self.user = nil
             }
             return true
         } catch {

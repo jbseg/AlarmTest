@@ -11,17 +11,27 @@ import SwiftUI
 struct UserProfile: View {
     @EnvironmentObject var session: SessionStore
     
-    func signOut () {
-         print("hi")
-         print(session.signOut())
-     }
     var body: some View {
         VStack {
-            Text("uid: \(session.session?.uid ?? "")")
-            Text("email: \(session.session?.email ?? "")")
+            if session.user != nil {
+                Image(uiImage: UIImage(data: session.user!.image)!)
+                    .resizable()
+                    .frame(width: 45, height: 45)
+                    .clipShape(Circle())
+                Text("uid: \(session.user!.uid)")
+                Text("email: \(session.user!.email)")
+            }
             Button(action: signOut, label: {
                 Text("Log out")
             })
+        }
+    }
+    
+    func signOut () {
+        if session.signOut() {
+            print("successfully signed out")
+        } else {
+            print("failed to sign out")
         }
     }
 }

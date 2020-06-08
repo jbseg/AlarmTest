@@ -14,13 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-            //Assigning the delegate here
-            UNUserNotificationCenter.current().delegate = self
-
-            //This is done to set up the notifications in the settings
-//            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-//                  print ("granted: ", granted)
-//            }
             FirebaseApp.configure()
             return true
       }
