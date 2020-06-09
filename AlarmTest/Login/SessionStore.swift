@@ -10,29 +10,33 @@ import SwiftUI
 import Firebase
 import Combine
 
-class User {
-    var uid: String
-    var email: String
-    var firstName: String
-    var lastName: String
-    var image : Data
-    init(uid: String, email: String, firstName: String, lastName: String, image : Data) {
-        self.uid = uid
-        self.email = email
-        self.firstName = firstName
-        self.lastName = lastName
-        self.image = image
-    }
+//class User : ObservableObject {
+//    @Published var uid: String?
+//    @Published var email: String?
+//    @Published var firstName: String?
+//    @Published var lastName: String?
+//    @Published var image : Data?
+////    init(uid: String, email: String, firstName: String, lastName: String, image : Data) {
+////        self.uid = uid
+////        self.email = email
+////        self.firstName = firstName
+////        self.lastName = lastName
+////        self.image = image
+////    }
+//
+//}
 
-}
-
-class SessionStore : ObservableObject {
+class User : ObservableObject {
 //    var didChange = PassthroughSubject<SessionStore, Never>()
-    @Published var user: User?
+    @Published var uid: String?
+    @Published var email: String?
+    @Published var firstName: String?
+    @Published var lastName: String?
+    @Published var image : Data?
     var handle: AuthStateDidChangeListenerHandle?
 
     
-    func listen () {
+    init () {
         // monitor authentication changes using firebase
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
@@ -43,20 +47,16 @@ class SessionStore : ObservableObject {
 //                        let image: Data = document.get("image") as! Data
                         withAnimation(.easeInOut(duration: 0.5)) {
                             // set the "user" environment variable
-                            self.user = User(
-                                uid: user.uid,
-                                email: user.email!,
-                                firstName: document.get("firstName") as! String,
-                                lastName: document.get("lastName") as! String,
-                                image: document.get("image") as! Data
-                            )
+                            self.uid = user.uid
+                            self.email = user.email!
+                            self.firstName = document.get("firstName") as? String
+                            self.lastName = document.get("lastName") as? String
+                            self.image = document.get("image") as? Data
                         }
                     } else {
                         print("Can't find user in db")
                     }
                 }
-            } else {
-                self.user = nil
             }
         }
     }
@@ -82,7 +82,11 @@ class SessionStore : ObservableObject {
             try Auth.auth().signOut()
             print("signing out")
             withAnimation(.easeInOut(duration: 0.5)) {
-                self.user = nil
+                self.uid = nil
+                self.email = nil
+                self.firstName = nil
+                self.lastName = nil
+                self.image = nil
             }
             return true
         } catch {

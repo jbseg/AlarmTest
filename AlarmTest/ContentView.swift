@@ -11,19 +11,24 @@ import Firebase
 
 struct ContentView : View {
     
-    @EnvironmentObject var session: SessionStore
+//    var session = SessionStore()
     @EnvironmentObject var firstLaunch: FirstLaunch
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
             if !firstLaunch.wasLaunchedBefore {
                 Welcome()
             }
-            else if Auth.auth().currentUser != nil {
-                Home().transition(.slide)
+            else if user.uid != nil {
+                Home()
+                 
+                    .transition(.slide)
                 
             } else {
-                Login().transition(.slide)
+                Login()
+                    
+                    .transition(.slide)
             }
         }
     }
@@ -33,6 +38,6 @@ struct ContentView : View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(SessionStore()).environmentObject(FirstLaunch())
+           .environmentObject(FirstLaunch())
     }
 }

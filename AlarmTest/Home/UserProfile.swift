@@ -9,19 +9,25 @@
 import SwiftUI
 
 struct UserProfile: View {
-    @EnvironmentObject var session: SessionStore
-    
+//    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var user: User
     var body: some View {
         VStack {
-            if session.user != nil {
-                Image(uiImage: UIImage(data: session.user!.image)!)
+            if user.image != nil {
+                Image(uiImage: UIImage(data: user.image!)!)
                     .resizable()
                     .frame(width: 45, height: 45)
                     .clipShape(Circle())
-                Text("uid: \(session.user!.uid)")
-                Text("first name: \(session.user!.firstName)")
-                Text("last name: \(session.user!.lastName)")
-                Text("email: \(session.user!.email)")
+            }
+            if user.uid != nil {
+                Text("uid: \(user.uid!)")
+            }
+            if user.firstName != nil{
+                Text("first name: \(user.firstName!)")
+            }
+            if user.lastName != nil{
+                Text("last name: \(user.lastName!)")
+                Text("email: \(user.email!)")
             }
             Button(action: signOut, label: {
                 Text("Log out")
@@ -30,7 +36,7 @@ struct UserProfile: View {
     }
     
     func signOut () {
-        if session.signOut() {
+        if user.signOut() {
             print("successfully signed out")
         } else {
             print("failed to sign out")
@@ -40,6 +46,6 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile().environmentObject(SessionStore())
+        UserProfile().environmentObject(User())
     }
 }

@@ -20,7 +20,7 @@ struct SignUpView : View {
     @State var showImagePicker = false
     @State var image : Data = .init(count: 0)
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var user: User
     
     func signUp () {
         loading = true
@@ -31,7 +31,7 @@ struct SignUpView : View {
             self.error_msg = "image is too large"
             return
         }
-        session.signUp(email: email, password: password) { (result, error) in
+        user.signUp(email: email, password: password) { (result, error) in
             self.loading = false
             if error != nil {
                 print("failed login \(error?.localizedDescription)")
@@ -167,7 +167,7 @@ struct SignUpView : View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView().environmentObject(SessionStore())
+        SignUpView().environmentObject(User())
     }
 }
 

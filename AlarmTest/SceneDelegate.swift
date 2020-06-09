@@ -23,12 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         // create a sessionstore so that we can see if the user was logged in or not
-        let session = SessionStore()
-        session.listen()
+//        let session = SessionStore()
+//        session.listen()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
         let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(RealTime()).environmentObject(session).environmentObject(FirstLaunch()))
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(RealTime()).environmentObject(User()).environmentObject(FirstLaunch()))
             
             self.window = window
             window.makeKeyAndVisible()

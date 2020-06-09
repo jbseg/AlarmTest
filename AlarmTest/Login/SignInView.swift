@@ -15,12 +15,12 @@ struct SignInView : View {
     @State var loading = false
     @State var error = false
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var user: User
     
     func signIn () {
         loading = true
         error = false
-        session.signIn(email: email, password: password) { (result, error) in
+        user.signIn(email: email, password: password) { (result, error) in
             self.loading = false
             if error != nil {
                 print("failed login")
@@ -92,6 +92,6 @@ struct SignInView : View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView().environmentObject(User())
     }
 }

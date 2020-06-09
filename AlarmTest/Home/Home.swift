@@ -16,7 +16,7 @@ struct Home: View {
     @State private var wakeUp = Date()
     @State var showAlarmSheet = false
     @EnvironmentObject var RT: RealTime
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var user: User
     var body: some View {
         ZStack{
             NavigationView{
@@ -58,7 +58,7 @@ struct Home: View {
                             Image(systemName: "plus").resizable()
                                 .frame(width: 20.0, height: 20.0)
                         })
-                        NavigationLink(destination: UserProfile().environmentObject(session)){
+                        NavigationLink(destination: UserProfile().environmentObject(user)){
                             Image(systemName: "person.circle").resizable()
                             .frame(width: 25.0, height: 25.0)
                         }
@@ -86,6 +86,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home().environmentObject(RealTime()).environmentObject(SessionStore())
+        Home().environmentObject(RealTime())
     }
 }
