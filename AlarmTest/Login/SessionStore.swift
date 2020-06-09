@@ -57,7 +57,13 @@ class User : ObservableObject {
                         print("Can't find user in db")
                     }
                 }
-            }
+            }  else {
+               self.uid = nil
+               self.email = nil
+               self.firstName = nil
+               self.lastName = nil
+               self.image = nil
+           }
         }
     }
     func signUp(

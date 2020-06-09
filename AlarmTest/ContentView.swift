@@ -20,7 +20,7 @@ struct ContentView : View {
             if !firstLaunch.wasLaunchedBefore {
                 Welcome()
             }
-            else if user.uid != nil {
+            else if Auth.auth().currentUser != nil {
                 Home()
                  
                     .transition(.slide)
