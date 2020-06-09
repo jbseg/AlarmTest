@@ -40,6 +40,7 @@ class SessionStore : ObservableObject {
                 let docRef = Firestore.firestore().collection("users").document(user.uid)
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
+//                        let image: Data = document.get("image") as! Data
                         withAnimation(.easeInOut(duration: 0.5)) {
                             // set the "user" environment variable
                             self.user = User(

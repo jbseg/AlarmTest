@@ -31,9 +31,11 @@ struct Home: View {
                                 }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 156/255, green: 157/255, blue: 161/255)))
                             }
                         }
-                        if showResults {
-                            resultsPreview()
-                        }
+                        
+                    }
+                    if showResults {
+                        resultsPreview()
+                            .padding(.leading, 30)
                     }
                 }
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
