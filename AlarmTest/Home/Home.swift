@@ -59,8 +59,19 @@ struct Home: View {
                                 .frame(width: 20.0, height: 20.0)
                         })
                         NavigationLink(destination: UserProfile().environmentObject(user)){
-                            Image(systemName: "person.circle").resizable()
-                            .frame(width: 25.0, height: 25.0)
+                            if user.image != nil {
+                                Image(uiImage: UIImage(data: user.image!)!)
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    //                                    .border(Color.black, width: 4)
+                                    .frame(width: 30, height: 30)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.blue, lineWidth: 1))
+                                
+                            } else {
+                                Image(systemName: "person.circle").resizable()
+                                    .frame(width: 25.0, height: 25.0)
+                            }
                         }
                     }
                 )
@@ -69,9 +80,9 @@ struct Home: View {
                 joinMenu(showJoin: self.$showJoin)
             }
         }
-//        .onAppear(perform: requestNotificationPermission)
-        .sheet(isPresented: $showAlarmSheet) {
-            alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showAlarmSheet).environmentObject(self.RT)
+            //        .onAppear(perform: requestNotificationPermission)
+            .sheet(isPresented: $showAlarmSheet) {
+                alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showAlarmSheet).environmentObject(self.RT)
         }
     }
     
@@ -80,12 +91,12 @@ struct Home: View {
         self.alarmIsSet = false
         self.showResults = true
     }
-
+    
 }
 
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home().environmentObject(RealTime())
+        Home().environmentObject(RealTime()).environmentObject(User())
     }
 }

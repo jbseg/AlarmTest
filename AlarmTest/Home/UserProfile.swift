@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct UserProfile: View {
-//    @EnvironmentObject var session: SessionStore
+    //    @EnvironmentObject var session: SessionStore
     @EnvironmentObject var user: User
     var body: some View {
         VStack {
@@ -18,6 +18,7 @@ struct UserProfile: View {
                     .resizable()
                     .frame(width: 45, height: 45)
                     .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.blue, lineWidth: 1))
             }
             if user.uid != nil {
                 Text("uid: \(user.uid!)")
