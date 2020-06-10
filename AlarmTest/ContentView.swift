@@ -11,7 +11,6 @@ import Firebase
 
 struct ContentView : View {
     
-//    var session = SessionStore()
     @EnvironmentObject var firstLaunch: FirstLaunch
     @EnvironmentObject var user: User
     

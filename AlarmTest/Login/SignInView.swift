@@ -63,7 +63,6 @@ struct SignInView : View {
                     SecureField("Enter Your Password", text: $password)
                     Divider()
                 }
-                //                .padding()
                 if (error) {
                     Text("username or password is wrong").foregroundColor(.red)
                 }

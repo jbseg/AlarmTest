@@ -10,6 +10,8 @@ import SwiftUI
 
 struct resultsPreview: View {
     let images: [String] = ["marilyn", "barack", "silhouette","marilyn", "barack", "silhouette","marilyn", "barack", "silhouette","marilyn", "barack", "silhouette"]
+    @Binding var showSheet: Bool
+    @Binding var showLoserPage: Bool
     @State var detailsOpen = false
     var body: some View {
         
@@ -27,6 +29,12 @@ struct resultsPreview: View {
             NavigationLink(destination: Text("results are here"), isActive: self.$detailsOpen) {
                 Text("Result Details")
             }
+            Button(action: {
+                self.showLoserPage = true
+                self.showSheet = true
+            }) {
+                Text("you lost")
+            }
         }
     }
 }
@@ -34,7 +42,7 @@ struct resultsPreview: View {
 struct resultsPreview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            resultsPreview()
+            resultsPreview(showSheet: .constant(false), showLoserPage: .constant(false))
         }
     }
 }

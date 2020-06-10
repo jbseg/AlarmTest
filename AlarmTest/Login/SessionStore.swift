@@ -10,21 +10,6 @@ import SwiftUI
 import Firebase
 import Combine
 
-//class User : ObservableObject {
-//    @Published var uid: String?
-//    @Published var email: String?
-//    @Published var firstName: String?
-//    @Published var lastName: String?
-//    @Published var image : Data?
-////    init(uid: String, email: String, firstName: String, lastName: String, image : Data) {
-////        self.uid = uid
-////        self.email = email
-////        self.firstName = firstName
-////        self.lastName = lastName
-////        self.image = image
-////    }
-//
-//}
 
 class User : ObservableObject {
 //    var didChange = PassthroughSubject<SessionStore, Never>()
@@ -81,7 +66,7 @@ class User : ObservableObject {
         handler: @escaping AuthDataResultCallback
         ) {
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
-    }
+        }
 
     func signOut () -> Bool {
         do {
@@ -105,6 +90,4 @@ class User : ObservableObject {
             Auth.auth().removeStateDidChangeListener(handle)
         }
     }
-
-    // additional methods (sign up, sign in) will go here
 }

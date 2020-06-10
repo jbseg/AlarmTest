@@ -13,8 +13,10 @@ struct Home: View {
     @State var alarmIsSet = false
     @State var showJoin = false
     @State var showResults = false
+    @State var showLoserPage = false
     @State private var wakeUp = Date()
-    @State var showAlarmSheet = false
+    @State var showAlarmSheet = true
+    @State var showSheet = false
     @EnvironmentObject var RT: RealTime
     @EnvironmentObject var user: User
     var body: some View {
@@ -34,7 +36,7 @@ struct Home: View {
                         
                     }
                     if showResults {
-                        resultsPreview()
+                        resultsPreview(showSheet: self.$showSheet, showLoserPage: $showLoserPage)
                             .padding(.leading, 30)
                     }
                 }
@@ -52,7 +54,8 @@ struct Home: View {
                         })
                         Button(action: {
                             withAnimation{
-                                self.showAlarmSheet.toggle()
+                                self.showAlarmSheet = true
+                                self.showSheet.toggle()
                             }
                         }, label: {
                             Image(systemName: "plus").resizable()
@@ -79,10 +82,15 @@ struct Home: View {
             if self.showJoin {
                 joinMenu(showJoin: self.$showJoin)
             }
+            
         }
-            //        .onAppear(perform: requestNotificationPermission)
-            .sheet(isPresented: $showAlarmSheet) {
-                alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showAlarmSheet).environmentObject(self.RT)
+        .sheet(isPresented: self.$showSheet) {
+            if self.showLoserPage {
+                LoserPage( showSheet: self.$showSheet, showLoserPage: self.$showLoserPage)
+            }
+            else if self.showAlarmSheet{
+                alarmSet(wakeUp: self.$wakeUp, alarmIsSet: self.$alarmIsSet, pageOpen: self.$showSheet).environmentObject(self.RT)
+            }
         }
     }
     

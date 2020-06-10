@@ -25,7 +25,7 @@ struct SignUpView : View {
     func signUp () {
         loading = true
         error = false
-        // check if the image is too large
+        // check if the image is too large for google images
         if self.image.count > 1000000 {
             error = true
             self.error_msg = "image is too large"
@@ -53,15 +53,6 @@ struct SignUpView : View {
     
     var body: some View {
         VStack {
-//            Spacer()
-//            Spacer()
-//            Image(systemName: "alarm")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 100, height: 100, alignment: .center)
-//
-//            Spacer()
-            
             VStack(alignment: .center){
                 HStack{
                     if self.image.count != 0 {
@@ -155,8 +146,6 @@ struct SignUpView : View {
                 Text("already have an account? Sign in")
             }
             .foregroundColor(.blue)
-//            Spacer()
-//            Spacer()
         }
         .sheet(isPresented: self.$showImagePicker, content: {
             ImagePicker(show: self.$showImagePicker, image: self.$image)
