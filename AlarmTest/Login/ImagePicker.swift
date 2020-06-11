@@ -45,7 +45,7 @@ struct ImagePicker : UIViewControllerRepresentable {
             
             let image = info[.originalImage]as! UIImage
             
-            let data = image.jpegData(compressionQuality: 0.45)
+            let data = image.jpegData(compressionQuality: 0.25)
             
             self.child.image = data!
             self.child.show.toggle()

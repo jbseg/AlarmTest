@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		38F69559F30551E7F1D016C4 /* Pods_AlarmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3194B7C338C1C60336023B /* Pods_AlarmTest.framework */; };
 		420146612487EAD30085235E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420146602487EAD30085235E /* GoogleService-Info.plist */; };
-		420146632487EE800085235E /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420146622487EE800085235E /* SessionStore.swift */; };
+		420146632487EE800085235E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420146622487EE800085235E /* User.swift */; };
 		420146652487F0460085235E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420146642487F0460085235E /* SignUpView.swift */; };
 		420146672487F2EA0085235E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420146662487F2EA0085235E /* Home.swift */; };
 		420146692487FAA40085235E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420146682487FAA40085235E /* UserProfile.swift */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		28AD37C26B9C49634DCA4A45 /* Pods-AlarmTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmTest.debug.xcconfig"; path = "Target Support Files/Pods-AlarmTest/Pods-AlarmTest.debug.xcconfig"; sourceTree = "<group>"; };
 		420146602487EAD30085235E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		420146622487EE800085235E /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		420146622487EE800085235E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		420146642487F0460085235E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		420146662487F2EA0085235E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		420146682487FAA40085235E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 				4201466A24882AFF0085235E /* Login.swift */,
 				420146642487F0460085235E /* SignUpView.swift */,
 				4201466C24882BE60085235E /* SignInView.swift */,
-				420146622487EE800085235E /* SessionStore.swift */,
+				420146622487EE800085235E /* User.swift */,
 				4286103D248E88AF0098A8A5 /* ImagePicker.swift */,
 			);
 			path = Login;
@@ -348,7 +348,7 @@
 				428A12B3248307420037E349 /* charitySelection.swift in Sources */,
 				428A12AF2482BED50037E349 /* joinMenu.swift in Sources */,
 				420146692487FAA40085235E /* UserProfile.swift in Sources */,
-				420146632487EE800085235E /* SessionStore.swift in Sources */,
+				420146632487EE800085235E /* User.swift in Sources */,
 				42F4A4A7248066F80099F574 /* AppDelegate.swift in Sources */,
 				42C4BD192481919900148A81 /* DigitalClock.swift in Sources */,
 				4201466D24882BE60085235E /* SignInView.swift in Sources */,

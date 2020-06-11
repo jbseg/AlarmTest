@@ -29,25 +29,31 @@ class User : ObservableObject {
                 let docRef = Firestore.firestore().collection("users").document(user.uid)
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
-//                        let image: Data = document.get("image") as! Data
                         withAnimation(.easeInOut(duration: 0.5)) {
                             // set the "user" environment variable
                             self.uid = user.uid
                             self.email = user.email!
                             self.firstName = document.get("firstName") as? String
                             self.lastName = document.get("lastName") as? String
-                            self.image = document.get("image") as? Data
+                            let imageid = document.get("imageid") as! String
+                            
+                            // download the image from google storage
+                            let downloadRef = Storage.storage().reference(withPath: "profile_img/\(imageid).jpg")
+                            downloadRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
+                                if error != nil {
+                                
+                                print("error downloading image")
+                              } else {
+                                self.image = data
+                              }
+                            }
                         }
                     } else {
                         print("Can't find user in db")
                     }
                 }
             }  else {
-               self.uid = nil
-               self.email = nil
-               self.firstName = nil
-               self.lastName = nil
-               self.image = nil
+                self.clearUserSession()
            }
         }
     }
@@ -73,11 +79,7 @@ class User : ObservableObject {
             try Auth.auth().signOut()
             print("signing out")
             withAnimation(.easeInOut(duration: 0.5)) {
-                self.uid = nil
-                self.email = nil
-                self.firstName = nil
-                self.lastName = nil
-                self.image = nil
+                clearUserSession()
             }
             return true
         } catch {
@@ -89,5 +91,13 @@ class User : ObservableObject {
         if let handle = handle {
             Auth.auth().removeStateDidChangeListener(handle)
         }
+    }
+    
+    func clearUserSession () {
+        self.uid = nil
+        self.email = nil
+        self.firstName = nil
+        self.lastName = nil
+        self.image = nil
     }
 }
