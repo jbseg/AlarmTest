@@ -16,6 +16,7 @@
 		4201466B24882AFF0085235E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466A24882AFF0085235E /* Login.swift */; };
 		4201466D24882BE60085235E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466C24882BE60085235E /* SignInView.swift */; };
 		4201466F2488916B0085235E /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201466E2488916B0085235E /* FirstLaunch.swift */; };
+		426923FF2493D771007286D5 /* AlarmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426923FE2493D771007286D5 /* AlarmCard.swift */; };
 		4286101C24896D830098A8A5 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286101B24896D830098A8A5 /* Welcome.swift */; };
 		4286103E248E88AF0098A8A5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286103D248E88AF0098A8A5 /* ImagePicker.swift */; };
 		42861040249135860098A8A5 /* LoserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286103F249135860098A8A5 /* LoserPage.swift */; };
@@ -49,6 +50,7 @@
 		4201466A24882AFF0085235E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4201466C24882BE60085235E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4201466E2488916B0085235E /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		426923FE2493D771007286D5 /* AlarmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCard.swift; sourceTree = "<group>"; };
 		4286101B24896D830098A8A5 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		4286103D248E88AF0098A8A5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4286103F249135860098A8A5 /* LoserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserPage.swift; sourceTree = "<group>"; };
@@ -126,10 +128,11 @@
 				428A12B02482F4660037E349 /* alarmSet.swift */,
 				428A12B2248307420037E349 /* charitySelection.swift */,
 				428DF1E424857E6A0014D822 /* resultsPreview.swift */,
-				420146662487F2EA0085235E /* Home.swift */,
 				420146682487FAA40085235E /* UserProfile.swift */,
 				4286103F249135860098A8A5 /* LoserPage.swift */,
 				42861041249139000098A8A5 /* BillingPage.swift */,
+				420146662487F2EA0085235E /* Home.swift */,
+				426923FE2493D771007286D5 /* AlarmCard.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				428DF1E524857E6A0014D822 /* resultsPreview.swift in Sources */,
 				420146652487F0460085235E /* SignUpView.swift in Sources */,
 				4286101C24896D830098A8A5 /* Welcome.swift in Sources */,
+				426923FF2493D771007286D5 /* AlarmCard.swift in Sources */,
 				4201466F2488916B0085235E /* FirstLaunch.swift in Sources */,
 				4286103E248E88AF0098A8A5 /* ImagePicker.swift in Sources */,
 				42C4BD06248159B100148A81 /* BtnStyles.swift in Sources */,

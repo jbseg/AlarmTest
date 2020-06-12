@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct Home: View {
-    @State var alarmIsSet = false
+    @State var alarmIsSet = true
     @State var showJoin = false
     @State var showResults = false
     @State var showLoserPage = false
@@ -22,23 +22,26 @@ struct Home: View {
     var body: some View {
         ZStack{
             NavigationView{
-                VStack(alignment: .center, spacing: 15){
-                    VStack(alignment: .leading){
-                        DigitalClock()
-                        if alarmIsSet{
-                            WakeUpClock(date: wakeUp)
-                            if wakeUp <= RT.date && !showResults{
-                                Button(action: stopFunc) {
-                                    Text("Stop")
-                                }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 156/255, green: 157/255, blue: 161/255)))
-                            }
-                        }
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 15){
+                        //                        DigitalClock()
+                        //                        if alarmIsSet{
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0), alarmOn: .constant(true))
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0), alarmOn: .constant(true))
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Fam wake up", charity: "BLM", donation: 1.0), alarmOn: .constant(false))
+                        //                            if wakeUp <= RT.date && !showResults{
+                        //                                Button(action: stopFunc) {
+                        //                                    Text("Stop")
+                        //                                }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 156/255, green: 157/255, blue: 161/255)))
+                        //                            }
+                        //                        }
                         
-                    }
-                    if showResults {
-                        resultsPreview(showSheet: self.$showSheet, showLoserPage: $showLoserPage)
-                            .padding(.leading, 30)
-                    }
+                    }.padding()
+                    //                    if showResults {
+                    //                        resultsPreview(showSheet: self.$showSheet, showLoserPage: $showLoserPage)
+                    //                            .padding(.leading, 30)
+                    //                    }
+                    Spacer()
                 }
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
                 .navigationBarItems(
