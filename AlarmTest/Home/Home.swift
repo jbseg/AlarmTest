@@ -26,9 +26,9 @@ struct Home: View {
                     VStack(alignment: .leading, spacing: 15){
                         //                        DigitalClock()
                         //                        if alarmIsSet{
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0), alarmOn: .constant(true))
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0), alarmOn: .constant(true))
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Fam wake up", charity: "BLM", donation: 1.0), alarmOn: .constant(false))
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 12, minute: 13, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0), alarmOn: true)
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 21, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0), alarmOn: true)
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [true, true, true, true, true, true, true], name: "take pup out", charity: "SPCA", donation: 1.0), alarmOn: false)
                         //                            if wakeUp <= RT.date && !showResults{
                         //                                Button(action: stopFunc) {
                         //                                    Text("Stop")

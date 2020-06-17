@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+            UNUserNotificationCenter.current().delegate = self
             FirebaseApp.configure()
             return true
       }
@@ -42,6 +43,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       }
 
       func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            print("notification was tapped")
             print (response.actionIdentifier)
             completionHandler()
       }

@@ -35,8 +35,11 @@ class User : ObservableObject {
                             self.email = user.email!
                             self.firstName = document.get("firstName") as? String
                             self.lastName = document.get("lastName") as? String
-                            let imageid = document.get("imageid") as! String
-                            
+                            guard let imageid = document.get("imageid") as? String else {
+                                print("no image id")
+                                return
+                            }
+                            print("image id \(imageid)")
                             // download the image from google storage
                             let downloadRef = Storage.storage().reference(withPath: "profile_img/\(imageid).jpg")
                             downloadRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
@@ -47,6 +50,7 @@ class User : ObservableObject {
                                 self.image = data
                               }
                             }
+                            
                         }
                     } else {
                         print("Can't find user in db")
